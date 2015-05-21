@@ -1,0 +1,52 @@
+<div class="col-lg-6 left">
+    <form method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username" ng-model="user.username" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="user.password"/>
+        </div>
+        <div class="form-group">
+            <label for="confirm-password">Password</label>
+            <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm Password" ng-model="user.confirmPassword" />
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-model="user.name" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="user.email" />
+        </div>
+        <div class="form-group">
+            <label class="radio-inline">
+                <input type="radio" name="gender" value="M" ng-model="user.gender" /> Male
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="gender" value="F" ng-model="user.gender" /> Female
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="gender" value="O" ng-model="user.gender" /> Other
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-click="registerUser(user)">Register</button>
+    </form>
+</div>
+
+<div class="col-lg-6 right">
+    <form method="post">
+        <div class="form-group">
+            <label for="login-username">Username</label>
+            <input type="text" class="form-control" id="login-username" name="username" placeholder="Username" ng-model="user.username" />
+        </div>
+        <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" class="form-control" id="login-password" name="password" placeholder="Password" ng-model="user.passowrd" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-click="loginUser(user)">Login</button>
+    </form>
+</div>

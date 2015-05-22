@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="SocialNetworkApp" ng-controller="MainController">
 <head lang="en">
 	<meta charset="UTF-8">
 	<title>The Social Network</title>
@@ -8,22 +8,13 @@
 	<link rel="stylesheet" href="css/bootstrap-cyborg.min.css" />
 	<link rel="stylesheet" href="css/app.css" />
 </head>
-<body ng-app="SocialNetworkApp">
+<body>
+	<header>
+		<nav class="navbar navbar-inverse">
+			<div class="container" ng-include="'templates/partials/navigation.html'"></div>
+		</nav>
+	</header>
 
-	<nav class="navbar navbar-inverse">
-		<div class="container">
-			<div class="navbar-header">
-				<a href="#" class="navbar-brand">The Social Network</a>
-			</div>
-			<div class="collapse navbar-collapse" id="navbar">
-				<ul class="nav navbar-nav">
-					<li><a href="#/">Home</a></li>
-					<li><a href="#/login">About</a></li>
-					<li><a href="#/register">Contact</a></li>
-				</ul>
-			</div> <!--/.nav-collapse -->
-		</div>
-	</nav>
 
 	<div class="container">
 		<ng-view>
@@ -43,5 +34,6 @@
 	<script src="js/services/authService.js"></script>
 
 	<script src="js/controllers/MainController.js"></script>
+	<script src="js/controllers/HomeController.js"></script>
 </body>
 </html>

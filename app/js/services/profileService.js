@@ -11,7 +11,17 @@ app.factory('profileService', function($http, serviceUrl, authService) {
         $http(request).success(success).error(error);
     }
 
+    function getFeedData (id, pageSize, success, error) {
+        var request = {
+            method: 'GET',
+            url: serviceUrl + '/me/feed?StartPostId=0&PageSize=5',
+            headers: authService.getAuthHeaders()
+        };
+        $http(request).success(success).error(error);
+    }
+
     return {
-        getMyProfile: getMyProfile
+        getMyProfile: getMyProfile,
+        getFeedData: getFeedData
     }
 });

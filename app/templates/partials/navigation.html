@@ -1,13 +1,38 @@
+<style>
+    .dropdown-menu > li > a > span.glyphicon {
+        margin-right: 10px;
+    }
+</style>
 <div class="navbar-header">
-    <a href="#" class="navbar-brand">The Social Network</a>
+    <a href="#/home" class="navbar-brand">The Social Network</a>
 </div>
-<div class="collapse navbar-collapse" id="navbar">
+<div class="collapse navbar-collapse" id="navbar" ng-if="isLoggedIn()">
     <ul class="nav navbar-nav">
-        <li><a href="#/home">Home</a></li>
-        <li ng-if="authService.isLogged()">
-            <a ng-click="logoutUser()">Logout</a>
+        <li class="dropdown">
+            <a class="dropdown-toggle" id="action-menu" data-toggle="dropdown">
+                Actions
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="action-menu">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-envelope"></span>Messages</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-user"></span>Friend Requests</a></li>
+            </ul>
         </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" id="profile-menu" data-toggle="dropdown">
+                Profile
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="profile-menu">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">{{ profileInfo }}</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-cog"></span>Edit Profile</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-rub"></span>Change Password</a></li>
 
-
+                <li role="presentation" class="divider"></li>
+                <li role="presentation">
+                    <a href="" role="menuitem" tabindex="-1" ng-click="logoutUser()"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>

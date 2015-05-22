@@ -1,10 +1,9 @@
-.pesho {
-	color:red;
-}
-
-.pesho:hover {
-	color:blue 
-}
-.even_row {
-	background: red;
+.page-title {
+	color:#fff;
+	font-size: 30px;
+	text-align: center;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin-bottom: 0px;
+	font-weight: bold;
 }

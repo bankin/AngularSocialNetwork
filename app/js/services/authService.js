@@ -29,6 +29,7 @@ app.factory('authService', function($http, serviceUrl) {
     }
 
     function getCurrentUser() {
+        console.log('user');
         var userObject = sessionStorage['currentUser'];
         if (userObject) {
             return JSON.parse(sessionStorage['currentUser']);
@@ -36,19 +37,24 @@ app.factory('authService', function($http, serviceUrl) {
     }
 
     function isAnonymous() {
+        console.log('anon');
         return sessionStorage['currentUser'] == undefined;
     }
 
     function isLoggedIn() {
+        console.log('logged');
+        console.log(sessionStorage['currentUser'] != undefined);
         return sessionStorage['currentUser'] != undefined;
     }
 
     function isNormalUser() {
+        console.log('normal');
         var currentUser = this.getCurrentUser();
         return (currentUser != undefined) && (!currentUser.isAdmin);
     }
 
     function isAdmin() {
+        console.log('admin');
         var currentUser = this.getCurrentUser();
         return (currentUser != undefined) && (currentUser.isAdmin);
     }
@@ -66,7 +72,7 @@ app.factory('authService', function($http, serviceUrl) {
         loginUser: login,
         registerUser: register,
         logoutUser: logout,
-        getUser: getCurrentUser,
+        getCurrentUser: getCurrentUser,
         isAnonymous: isAnonymous,
         isLogged: isLoggedIn,
         isNormal: isNormalUser,
